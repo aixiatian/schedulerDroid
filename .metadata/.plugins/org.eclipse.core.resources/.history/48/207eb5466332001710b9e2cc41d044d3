@@ -1,0 +1,44 @@
+package com.chunguang.test;
+
+import java.util.List;
+
+import us.codecraft.webmagic.Page;
+import us.codecraft.webmagic.Site;
+import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.pipeline.ConsolePipeline;
+import us.codecraft.webmagic.processor.PageProcessor;
+
+public class Test  implements PageProcessor{
+	
+	private Site site = Site.me().setRetryTimes(3).setSleepTime(1000).setUseGzip(true);
+	PageEntity page = null;
+	Map<String,Object> fldMap = null;
+
+	public Test(Map<String,Object> fldMap){
+		this.fldMap = fldMap;
+	}
+	
+
+	public Site getSite() {
+		return site;
+	}
+
+	public void setSite(Site site) {
+		this.site = site;
+	}
+
+	public PageEntity getPage() {
+		return page;
+	}
+
+	public void setPage(PageEntity page) {
+		this.page = page;
+	}
+
+
+	public void process(Page arg0) {
+		page = new PageEntity(arg0, fldMap);
+		page.getPage();
+	}
+	
+}

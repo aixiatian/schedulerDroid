@@ -1,0 +1,64 @@
+package com.chunguang.test;
+
+import java.util.Map;
+
+import us.codecraft.webmagic.Page;
+import us.codecraft.webmagic.ResultItems;
+import us.codecraft.webmagic.Site;
+import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.pipeline.ConsolePipeline;
+import us.codecraft.webmagic.pipeline.FilePipeline;
+import us.codecraft.webmagic.processor.PageProcessor;
+
+public class Test  implements PageProcessor{
+	
+	private Site site = Site.me().setRetryTimes(3).setSleepTime(1000).setUseGzip(true);
+	PageEntity page = null;
+	Map<String,Object> fldMap = null;
+
+	public Test(Map<String,Object> fldMap){
+//		this.fldMap = fldMap;
+	}
+	public Test(){}
+
+	public Site getSite() {
+		return site;
+	}
+
+	public void setSite(Site site) {
+		this.site = site;
+	}
+
+	public PageEntity getPage() {
+		return page;
+	}
+
+	public void setPage(PageEntity page) {
+		this.page = page;
+	}
+
+
+	public void process(Page arg0) {
+		page = new PageEntity(arg0, fldMap);
+		page.getPage();
+	}
+	
+	public static String start(Test spiderent,String url,String path){
+		Spider spider = Spider.create(spiderent);
+		if(path != null && !path.equals("")){
+			spider.pipeline(new FilePipeline(path));
+		};
+		spider.thread(2);
+        ResultItems resultItems = spider.<ResultItems>get(url);
+        String res = resultItems.getAll().toString();
+        spider.close();
+        return res;
+	}
+	
+	public static void main(String[] args) {
+		Spider spider = Spider.create(new Test());
+		spider.addPipeline(new ConsolePipeline());
+		ResultItems resultItems = spider.<ResultItems>get("");
+	}
+	
+}

@@ -1,0 +1,22 @@
+package com.chunguang.neihanduanzi.entity;
+
+import com.alibaba.fastjson.JSONObject;
+
+public class LoadMoreData {
+
+	JSONObject data = new JSONObject();
+	
+	String utm_campaign; // ,
+	String hide_top_banner; // null,
+	String utm_medium; // ,
+	String utm_source; // ,
+	String message; // success,
+	String category_id; // 18
+	
+	VideoData videodata;//data
+	
+	public LoadMoreData(String json){
+		this.data = JSONObject.parseObject(json);
+	}
+	
+}

@@ -1,0 +1,12 @@
+package com.chunguang.neihanduanzi.entity;
+
+public class UserInfo {
+
+	String is_following; //: false,
+	String avatar_url; //: http://p1.pstatp.com/thumb/1dce000cad8f3b3bf261,
+	String user_id;//: 22704464913,
+	String name; //: \u6e05\u96c5\u5a49\u5fc3,
+	String user_verified;//: false
+	
+	
+}

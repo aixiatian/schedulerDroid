@@ -1,0 +1,61 @@
+package com.chunguang.neihanduanzi.entity;
+
+import java.util.List;
+
+import com.alibaba.fastjson.JSONObject;
+
+public class VideoData {
+
+	JSONObject data = new JSONObject();
+	
+	String has_more; // true,
+	String min_time; // 1494024249.0,
+	String tip; // 20\u6761\u65b0\u5185\u5bb9,
+	String datastr; //
+	List<VideoGroupData> videogroup = null;
+	String max_time;//": 1494015699.0;
+	
+	
+	
+	public String getHas_more() {
+		return has_more;
+	}
+	public void setHas_more(String has_more) {
+		this.has_more = has_more;
+	}
+	public String getMin_time() {
+		return min_time;
+	}
+	public void setMin_time(String min_time) {
+		this.min_time = min_time;
+	}
+	public String getTip() {
+		return tip;
+	}
+	public void setTip(String tip) {
+		this.tip = tip;
+	}
+	public String getData() {
+		return data;
+	}
+	public void setData(String data) {
+		this.data = data;
+	}
+	public List<VideoGroupData> getVideogroup() {
+		if(videogroup == null){
+			
+		}
+		return videogroup;
+	}
+	public void setVideogroup(List<VideoGroupData> videogroup) {
+		this.videogroup = videogroup;
+	}
+	public String getMax_time() {
+		return max_time;
+	}
+	public void setMax_time(String max_time) {
+		this.max_time = max_time;
+	}
+	
+	
+}

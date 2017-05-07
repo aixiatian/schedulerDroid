@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements to &apos;values&apos;&#x0D;&#x0A;- Original project: &apos;LoginDemo&apos;&#x0D;&#x0A;- Destination element: &apos;values&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     dimens.xml&#x0D;&#x0A;     colors.xml&#x0D;&#x0A;     strings.xml&#x0D;&#x0A;     styles.xml" description="Copy files" element1="res/values/dimens.xml" element2="res/values/colors.xml" element3="res/values/strings.xml" element4="res/values/styles.xml" files="4" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1485868266030" target="/Schadualer/res/values" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,13 @@
+package com.chunguang.neihanduanzi.entity;
+
+import com.alibaba.fastjson.JSONObject;
+
+public class LoadMoreData {
+
+	JSONObject data = new JSONObject();
+	
+	public LoadMoreData(String json){
+		this.data = JSONObject.parseObject(json);
+	}
+	
+}

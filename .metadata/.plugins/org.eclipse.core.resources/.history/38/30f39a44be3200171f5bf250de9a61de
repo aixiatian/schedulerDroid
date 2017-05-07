@@ -1,0 +1,9 @@
+package com.chunguang.utils;
+
+public class CUtil {
+
+	public static boolean isStrIn(String source,String str){
+		
+	}
+	
+}

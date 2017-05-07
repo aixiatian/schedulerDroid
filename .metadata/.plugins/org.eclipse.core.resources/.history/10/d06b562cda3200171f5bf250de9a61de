@@ -1,0 +1,8 @@
+package com.chunguang.neihanduanzi.entity;
+
+public class VideoGroupData {
+
+	String mp4_url;
+	String text;
+	
+}

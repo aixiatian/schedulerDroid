@@ -1,0 +1,10 @@
+package com.chunguang.neihanduanzi.entity;
+
+public class VideoData {
+
+	String has_more; // true,
+	String min_time; // 1494024249.0,
+	String tip; // 20\u6761\u65b0\u5185\u5bb9,
+	String data; //
+	
+}

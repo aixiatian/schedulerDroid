@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_bg"  >
+
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/login_data_layout"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/h001" />
+
+    </LinearLayout>
+<!--  android:background="@drawable/logindata_back_groud" -->
+    <LinearLayout
+        android:id="@+id/login_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+       
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/username_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:text="账    号"
+                android:textColor="#b3b3b3"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/login_edit_userName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:singleLine="true" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5" >
+
+                <Button
+                    android:id="@+id/down_but"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/button2_down" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="密    码"
+                android:textColor="#b3b3b3"
+                android:textSize="16dp" />
+
+            <EditText
+                android:id="@+id/login_edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@null"
+                android:inputType="textPassword"
+                android:singleLine="true" />
+        </LinearLayout>
+    </LinearLayout>
+<!--         android:background="@drawable/login_but_bg" -->
+    <Button
+        android:id="@+id/login_but_landing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_data_layout"
+        android:layout_marginTop="30dp"
+
+        android:text="登    录"
+        android:textColor="#ffffff"
+        android:textSize="18dp" />
+
+</RelativeLayout>

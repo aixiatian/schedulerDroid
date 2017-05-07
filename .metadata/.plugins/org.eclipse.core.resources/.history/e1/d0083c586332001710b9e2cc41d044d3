@@ -1,0 +1,41 @@
+package com.chunguang.entity;
+
+import java.util.Map;
+
+import us.codecraft.webmagic.Page;
+
+public class PageEntity {
+	
+	Page page = null;
+	Map<String,Object> fldMap = null;
+	
+	public PageEntity(Map<String,Object> fldMap){
+		this.page = new Page();
+		this.fldMap = fldMap;
+	}
+	
+	public PageEntity(Page page,Map<String,Object> fldMap){
+		this.page = page;
+		this.fldMap = fldMap;
+	}
+	
+	public void getPage(){
+		if(fldMap != null && fldMap.size()>0){
+			for (String key : fldMap.keySet()) {
+				if(!key.startsWith("field_") || "".equals(key))continue;
+				String kvno = key.split("_")[1];
+				String[] aa = (String[])fldMap.get(key);
+				String fldkey = aa[0];
+				if("".equals(fldkey))continue;
+				Object o = fldMap.get("value_"+kvno);
+				String val = null;
+				if(o instanceof String[]){
+					val = ((String[])o)[0];
+				}else{
+					val = o.toString();
+				}
+				page.putField(fldkey, page.getHtml().xpath(val).all());
+			}
+		}
+	}
+}

@@ -1,0 +1,208 @@
+package com.chunguang.test;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.junit.Test;
+
+import com.chunguang.utils.CUtil;
+
+public class TestHttpClient {
+
+	static CloseableHttpClient client = HttpClients.createDefault();
+	public static String ua = "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36";
+	public static String video_home = "http://neihanshequ.com/video/";
+	public static String home = "http://neihanshequ.com/";
+	public static String max_time = "";
+	
+	public static String csrfmiddlewaretoken = null;
+	
+	public static Map<String,String> urlMap = new HashMap<String,String>();
+	
+	
+	
+	public static void main(String[] args) throws Exception {
+		
+//		HttpGet get = new HttpGet("http://i.snssdk.com/neihan/video/playback/?video_id=ddb2c1bcbbbd4dbb9718ca7d194e5475&quality=480p&line=0&is_gif=0.mp4");
+//		CloseableHttpResponse res = client.execute(get);
+//		InputStream is = res.getEntity().getContent();
+//		File storeFile = new File("d:/a.mp4");
+//		FileOutputStream output = new FileOutputStream(storeFile);
+//		res.getEntity().writeTo(output);
+//		System.out.println(landHomePage());
+		String home_html = landHomePage();
+		
+		Document doc = Jsoup.parse(home_html);
+		getToken(doc);
+		getMaxTime(home_html);
+		
+		
+		Element contEle = doc.getElementById("detail-list");
+		Elements lists = contEle.getAllElements();
+		int size = lists.size();
+		for (int i = 0; i < size; i++) {
+			Element e = lists.get(i);
+			Elements content = e.getElementsByClass("content-wrapper");
+			if(content.size() == 0) continue;
+			String video_url = getVideoUrl(content.get(0));
+//			System.out.println(video_url);
+			if("".equals(video_url))continue;
+//			if(i > 4)
+//				break;
+			String title = getTitle(content.get(0));
+			urlMap.put(video_url, title);
+		}
+		for (String url : urlMap.keySet()) {
+//			store2File(url, urlMap.get(url));
+//			Thread.sleep(2000);
+			System.out.println(url + "->" + urlMap.get(url));
+		}
+		
+//		String str = loadMore();
+//		System.out.println(str);
+//		str = loadMore();
+//		System.out.println(str);
+	}
+	
+	public static void getToken(Document doc){
+		Elements lists = doc.getElementsByTag("input");
+		for (Element e : lists) {
+			String name = e.attr("name");
+			if(!CUtil.isStrNull(name) && "csrfmiddlewaretoken".equals(name)){
+				csrfmiddlewaretoken = e.attr("value");
+				System.out.println(csrfmiddlewaretoken);
+				break;
+			}
+		}
+	}
+	
+	public static void main1(String[] args){
+		System.out.println(System.currentTimeMillis()/1000);
+		System.out.println(new Date(1494113317000l));
+		System.out.println(new Date(1494105217000l));
+	}
+	
+	public static void store2File(String url,String name) throws Exception{
+		HttpGet get = new HttpGet(url);
+		CloseableHttpResponse res = client.execute(get);
+		if("".equals(name))
+			name = System.currentTimeMillis()+"";
+		File storeFile = new File("E:/ÄÚº­¶Î×ÓÊÓÆµ/"+name+".mp4");
+		FileOutputStream output = new FileOutputStream(storeFile);
+		res.getEntity().writeTo(output);
+		res.close();
+		output.close();
+	}
+	
+	public static String getVideoUrl(Element e){
+//		Elements content = e.getElementsByClass("detail-list");/
+		Element videoContainer = e.getElementById("videoContainer");
+		Element player_container = videoContainer.getElementsByClass("player-container").get(0);
+		String video_url = player_container.attr("data-src");
+		return video_url;
+	}
+	public static String getTitle(Element e){
+		Elements content = e.getElementsByClass("upload-txt");
+//		Elements content = e.getElementsByClass("name-time-wrapper left");
+		if(content.size() == 0) return "";
+		Elements name = content.get(0).getElementsByClass("title");
+		if(name.size() == 0) return "";
+		String namestr = name.get(0).text();
+		return namestr;
+	}
+	
+	public static void getMaxTime(String html){
+		//max_time: '
+		String mtstr = "max_time: '";
+		int idx = html.indexOf(mtstr);
+		String substr = html.substring(idx + mtstr.length());
+		String maxtime = substr.substring(0, substr.indexOf("'"));
+		System.out.println(maxtime);
+		this.max_time = maxtime;
+	}
+	
+	public static String loadMore(){
+//		Request URL:http://neihanshequ.com/video/?is_json=1&app_name=neihanshequ_web&max_time=1494024699
+//		Request Method:GET
+//		Status Code:200 OK
+//		Request Headersview source
+		
+//		Accept:application/json, text/javascript, */*; q=0.01
+//		Accept-Encoding:gzip,deflate,sdch
+//		Accept-Language:zh-CN,zh;q=0.8
+//		Connection:keep-alive
+//		Cookie:uuid="w:75b0b8d6e1a44784ba04809a0f9209d9"; Hm_lvt_773f1a5aa45c642cf87eef671e4d3f6a=1494030397; Hm_lpvt_773f1a5aa45c642cf87eef671e4d3f6a=1494030397; csrftoken=9ff2fa6eb10b6e405631a4f7f13f8aad; tt_webid=58549058983
+//		Host:neihanshequ.com
+//		Referer:http://neihanshequ.com/video/
+//		User-Agent:Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36
+//		X-CSRFToken:9ff2fa6eb10b6e405631a4f7f13f8aad
+//		X-Requested-With:XMLHttpRequest
+		HttpGet get = new HttpGet("http://neihanshequ.com/video/?is_json=1&app_name=neihanshequ_web&max_time="+max_time);
+		get.addHeader("Accept", "application/json, text/javascript, */*; q=0.01");
+		get.addHeader("Accept-Encoding", "gzip,deflate,sdch");
+		get.addHeader("Accept-Language", "zh-CN,zh;q=0.8");
+		get.addHeader("Connection", "keep-alive");
+		get.addHeader("Host", "eihanshequ.com");
+		get.addHeader("User-Agent", ua);
+		get.addHeader("Referer", "http://neihanshequ.com/video/");
+		get.addHeader("X-Requested-With", "XMLHttpRequest");
+		get.addHeader("X-CSRFToken", csrfmiddlewaretoken);
+		
+		try {
+			CloseableHttpResponse res = client.execute(get);
+			
+			return EntityUtils.toString(res.getEntity());
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+	
+	public static String landHomePage(){
+		HttpGet get = new HttpGet(home);
+		//Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+		//Accept-Encoding:gzip,deflate,sdch
+		//Accept-Language:zh-CN,zh;q=0.8
+		//Connection:keep-alive
+		//Cookie:uuid="w:75b0b8d6e1a44784ba04809a0f9209d9"; Hm_lvt_773f1a5aa45c642cf87eef671e4d3f6a=1494030397; Hm_lpvt_773f1a5aa45c642cf87eef671e4d3f6a=1494030397; csrftoken=9ff2fa6eb10b6e405631a4f7f13f8aad; tt_webid=58549058983
+		//Host:neihanshequ.com
+		//User-Agent:Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36
+		get.addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8");
+		get.addHeader("Accept-Encoding", "gzip,deflate,sdch");
+		get.addHeader("Accept-Language", "zh-CN,zh;q=0.8");
+		get.addHeader("Connection", "keep-alive");
+		get.addHeader("Host", "eihanshequ.com");
+		get.addHeader("User-Agent", ua);
+		
+		try {
+			CloseableHttpResponse res = client.execute(get);
+			get = new HttpGet(video_home);
+			res = client.execute(get);
+			return EntityUtils.toString(res.getEntity());
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "";
+	}
+	
+	
+}

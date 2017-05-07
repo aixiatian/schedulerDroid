@@ -1,0 +1,14 @@
+package com.chunguang.utils;
+
+public class CUtil {
+
+	public static boolean isStrIn(String source,String str){
+		if(isStrNull(source) || isStrNull(str))
+			return false;
+		return ().equals();
+	}
+	
+	public static boolean isStrNull(String str){
+		return str == null || str.equals("") || str.equals("null");
+	}
+}

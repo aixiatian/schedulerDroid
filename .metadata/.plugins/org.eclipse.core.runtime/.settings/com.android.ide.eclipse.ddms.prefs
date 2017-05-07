@@ -1,0 +1,11 @@
+ddms.logcat.auotmonitor.level=error
+ddms.logcat.automonitor.userprompt=true
+eclipse.preferences.version=1
+logcat.view.colsize.Application=177
+logcat.view.colsize.Level=34
+logcat.view.colsize.PID=62
+logcat.view.colsize.TID=62
+logcat.view.colsize.Tag=182
+logcat.view.colsize.Text=690
+logcat.view.colsize.Time=165
+logcat.view.filters.list=name\: 'token', tag\: 'TOKEN', text\: '', pid\: '', app\: '', level\: 'verbose', 

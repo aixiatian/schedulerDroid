@@ -1,0 +1,137 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e7e7e7"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="68dp"
+        android:src="@drawable/login_title_1" />
+
+    <LinearLayout
+        android:id="@+id/login_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/userId_LinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal" >
+
+                <!-- android:ems="10"表示EditText内最多只显示10个字符，超出不显示 -->
+				<!-- android:singleLine="true"表示不能全部显示时，后面用“…”来表示 -->
+                <EditText
+                    android:id="@+id/login_edtId"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:ems="10"
+                    android:hint="@string/username_edit_hint"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:singleLine="true"
+                    android:textColorHint="#999999"
+                    android:textColor="#999999"
+                    android:textSize="18sp" >
+
+                    <requestFocus />
+                </EditText>
+
+                <ImageView
+                    android:id="@+id/login_more_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="5dp"
+                    android:src="@drawable/login_more_up" />
+            </LinearLayout>
+
+           <!-- 横线  -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#CACDD1" />
+
+            <EditText
+                android:id="@+id/login_edtPwd"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:background="@null"
+                android:hint="@string/pwd_edit_hint"
+                android:inputType="textPassword"
+                android:paddingLeft="15dp"
+                android:paddingRight="0dp"
+                android:singleLine="true"
+                android:textColorHint="#999999"
+                android:textColor="#999999"
+                android:textSize="18sp" />
+        </LinearLayout>
+<RadioGroup android:id="@+id/radioGroup" 
+ 			    android:contentDescription="@string/radioGroup_desc" 
+ 			    android:layout_width="wrap_content" 
+ 			    android:layout_height="wrap_content"
+ 			    android:layout_marginLeft="15.0dip"
+ 			    android:layout_marginTop="10.0dip"
+ 			    android:layout_marginBottom="10dip">
+                
+     			<RadioButton android:name="1" 
+     			    android:layout_width="wrap_content" 
+     			    android:layout_height="wrap_content" 
+     			    android:id="@+id/radio_nomal" 
+     			    android:text="@string/radio_nomal"
+     			    android:textColor="@color/radio_txt_color" 
+     			    android:checked="true">
+     			</RadioButton>
+    			<RadioButton android:name="0" 
+    			    android:layout_width="wrap_content" 
+    			    android:layout_height="wrap_content" 
+    			    android:id="@+id/radio_test" 
+    			    android:text="@string/radio_test"
+    			    android:textColor="@color/radio_txt_color">
+    			</RadioButton>    
+			</RadioGroup>
+        <Button
+            android:id="@+id/login_btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_button_style"
+            android:text="@string/login_btn"
+            android:textColor="#FFFFFF"
+            android:textSize="19sp" />
+    </LinearLayout>
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+ 
+    <TextView
+        android:id="@+id/login_txtForgotPwd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="15dp"
+        android:text="@string/forgot_pwd"
+        android:textColor="#0079FF"
+        android:textSize="18sp" />
+ -->
+</LinearLayout>

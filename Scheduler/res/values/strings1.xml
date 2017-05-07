@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name1">Schadualer</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="login_btn1">登录</string>
+    <string name="tips_vpn">登陆前确保已拨通VPN!</string>
+    <string name="radio_nomal1">正式</string>
+    <string name="radio_test1">测试</string>
+    <string name="pwd_edit_hint1">请输入密码</string>
+    <string name="username_edit_hint1">请输入账户</string>
+    <string name="radioGroup_desc1">调度</string>
+
+</resources>

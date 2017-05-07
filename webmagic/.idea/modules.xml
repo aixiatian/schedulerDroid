@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-core/webmagic-core.iml" filepath="$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-core/webmagic-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-extension/webmagic-extension.iml" filepath="$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-extension/webmagic-extension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-parent.iml" filepath="$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-samples/webmagic-samples.iml" filepath="$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-samples/webmagic-samples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-saxon/webmagic-saxon.iml" filepath="$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-saxon/webmagic-saxon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-scripts/webmagic-scripts.iml" filepath="$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-scripts/webmagic-scripts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-selenium/webmagic-selenium.iml" filepath="$PROJECT_DIR$/../webmagic-webmagic-parent-0.6.1/webmagic-selenium/webmagic-selenium.iml" />
+    </modules>
+  </component>
+</project>

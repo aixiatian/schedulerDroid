@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <color name="btn_bk_color">#FF8C00</color>
+        <color name="tip_vpn">#FF0000</color>
+        <color name="radio_txt_color">#000000</color>
+        <!-- <color name="white">#FFFAFA</color> -->
+        <color name="light_yellow">#FFF68F</color>
+        <color name="down_refresh_color_1">#E0FFFF</color>
+        <color name="down_refresh_color_2">#D1EEEE</color>
+        <color name="down_refresh_color_3">#98F5FF</color>
+        <color name="down_refresh_color_4">#00F5FF</color>
+</resources>

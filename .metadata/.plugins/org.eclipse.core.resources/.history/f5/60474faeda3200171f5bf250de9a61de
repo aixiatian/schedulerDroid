@@ -1,0 +1,31 @@
+package com.chunguang.neihanduanzi.entity;
+
+public class VideoGroupData {
+
+	String mp4_url;
+	String text;
+	"digg_count": 16052,
+	"duration": 13.48
+	online_time": 1493808753,
+	"category_name": "\u641e\u7b11\u89c6\u9891",
+	"flash_url": "",
+	"category_visible": false,
+	"bury_count": 4427,
+	"is_anonymous": false,
+	"repin_count": 543,
+	"uri": "bda4b5ad5c174eb7901ee4438928f4d6"
+	user
+	"status_desc": "\u70ed\u95e8\u6295\u7a3f",
+	"play_count": 1705920
+	"comment_count": 12842,
+	"cover_image_uri": "1ead000920861d2385f6",
+	"id_str": "59734145699",
+	"media_type": 3,
+	"share_count": 16848
+	"content": "\u77e5\u9053\u662f\u4ec0\u4e48\u86cb\uff0c\u731c\u51fa\u6765\u4e86\u5417"
+	"create_time": 1493808753,
+	"keywords": "",
+	"id": 59734145699,
+	"favorite_count": 543,
+	"go_detail_count": 859014
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">iScheduler</string>
+   <string name="username_edit_hint">用户名</string>
+    <string name="pwd_edit_hint">密码</string>
+    <string name="login_btn">登录</string>
+    <string name="forgot_pwd">忘记密码？</string>
+    <string name="loading">正在登录</string>
+    <string name="radio_nomal">正式</string>
+    <string name="radio_test">测试</string>
+	<string name="radioGroup_desc">调度</string>
+</resources>

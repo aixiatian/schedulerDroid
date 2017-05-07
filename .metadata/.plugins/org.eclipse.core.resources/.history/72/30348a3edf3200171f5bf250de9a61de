@@ -1,0 +1,208 @@
+package com.chunguang.neihanduanzi.entity;
+
+import com.alibaba.fastjson.JSONObject;
+
+public class VideoGroupData {
+
+	String mp4_url;
+	String text;
+	String digg_count; // 16052,
+	String duration; // 13.48
+	String online_time; // 1493808753,
+	String category_name; // \u641e\u7b11\u89c6\u9891,
+	String flash_url; // ,
+	String category_visible; // false,
+	String bury_count; // 4427,
+	String is_anonymous; // false,
+	String repin_count; // 543,
+	String uri; // bda4b5ad5c174eb7901ee4438928f4d6
+	UserInfo user;
+	String status_desc; // \u70ed\u95e8\u6295\u7a3f,
+	String play_count; // 1705920
+	String comment_count; // 12842,
+	String cover_image_uri; // 1ead000920861d2385f6,
+	String id_str; // 59734145699,
+	String media_type; // 3,
+	String share_count; // 16848
+	String content; // \u77e5\u9053\u662f\u4ec0\u4e48\u86cb\uff0c\u731c\u51fa\u6765\u4e86\u5417
+	String create_time; // 1493808753,
+	String keywords; // ,
+	String id; // 59734145699,
+	String favorite_count; // 543,
+	String go_detail_count; // 859014
+	
+	JSONObject data = new JSONObject();
+	
+	public VideoGroupData(String json){
+		this.data = JSONObject.parseObject(json);
+	}
+	
+	public void load(){
+		setMp4_url(data.getString("mp4_url"));
+		setDuration(data.getString("duration"));
+		setCategory_name(data.getString("category_name"));
+		setUri(data.getString("uri"));
+		setPlay_count(data.getString("play_count"));
+	}
+	
+	
+	public String getMp4_url() {
+		return mp4_url;
+	}
+	public void setMp4_url(String mp4_url) {
+		this.mp4_url = mp4_url;
+	}
+	public String getText() {
+		return text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+	public String getDigg_count() {
+		return digg_count;
+	}
+	public void setDigg_count(String digg_count) {
+		this.digg_count = digg_count;
+	}
+	public String getDuration() {
+		return duration;
+	}
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+	public String getOnline_time() {
+		return online_time;
+	}
+	public void setOnline_time(String online_time) {
+		this.online_time = online_time;
+	}
+	public String getCategory_name() {
+		return category_name;
+	}
+	public void setCategory_name(String category_name) {
+		this.category_name = category_name;
+	}
+	public String getFlash_url() {
+		return flash_url;
+	}
+	public void setFlash_url(String flash_url) {
+		this.flash_url = flash_url;
+	}
+	public String getCategory_visible() {
+		return category_visible;
+	}
+	public void setCategory_visible(String category_visible) {
+		this.category_visible = category_visible;
+	}
+	public String getBury_count() {
+		return bury_count;
+	}
+	public void setBury_count(String bury_count) {
+		this.bury_count = bury_count;
+	}
+	public String getIs_anonymous() {
+		return is_anonymous;
+	}
+	public void setIs_anonymous(String is_anonymous) {
+		this.is_anonymous = is_anonymous;
+	}
+	public String getRepin_count() {
+		return repin_count;
+	}
+	public void setRepin_count(String repin_count) {
+		this.repin_count = repin_count;
+	}
+	public String getUri() {
+		return uri;
+	}
+	public void setUri(String uri) {
+		this.uri = uri;
+	}
+	public UserInfo getUser() {
+		return user;
+	}
+	public void setUser(UserInfo user) {
+		this.user = user;
+	}
+	public String getStatus_desc() {
+		return status_desc;
+	}
+	public void setStatus_desc(String status_desc) {
+		this.status_desc = status_desc;
+	}
+	public String getPlay_count() {
+		return play_count;
+	}
+	public void setPlay_count(String play_count) {
+		this.play_count = play_count;
+	}
+	public String getComment_count() {
+		return comment_count;
+	}
+	public void setComment_count(String comment_count) {
+		this.comment_count = comment_count;
+	}
+	public String getCover_image_uri() {
+		return cover_image_uri;
+	}
+	public void setCover_image_uri(String cover_image_uri) {
+		this.cover_image_uri = cover_image_uri;
+	}
+	public String getId_str() {
+		return id_str;
+	}
+	public void setId_str(String id_str) {
+		this.id_str = id_str;
+	}
+	public String getMedia_type() {
+		return media_type;
+	}
+	public void setMedia_type(String media_type) {
+		this.media_type = media_type;
+	}
+	public String getShare_count() {
+		return share_count;
+	}
+	public void setShare_count(String share_count) {
+		this.share_count = share_count;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getCreate_time() {
+		return create_time;
+	}
+	public void setCreate_time(String create_time) {
+		this.create_time = create_time;
+	}
+	public String getKeywords() {
+		return keywords;
+	}
+	public void setKeywords(String keywords) {
+		this.keywords = keywords;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getFavorite_count() {
+		return favorite_count;
+	}
+	public void setFavorite_count(String favorite_count) {
+		this.favorite_count = favorite_count;
+	}
+	public String getGo_detail_count() {
+		return go_detail_count;
+	}
+	public void setGo_detail_count(String go_detail_count) {
+		this.go_detail_count = go_detail_count;
+	}
+	
+	
+	
+}

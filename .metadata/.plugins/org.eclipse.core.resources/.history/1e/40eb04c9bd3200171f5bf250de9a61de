@@ -1,0 +1,5 @@
+package com.chunguang.neihanduanzi.entity;
+
+public class LoadMoreData {
+
+}
