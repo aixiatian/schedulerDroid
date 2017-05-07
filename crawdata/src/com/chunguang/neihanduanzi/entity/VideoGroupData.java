@@ -52,6 +52,9 @@ public class VideoGroupData {
 		setCreate_time(data.getString("create_time"));
 		setCategory_id(data.getString("category_id"));
 		setCover_image_uri(data.getString("cover_image_uri"));
+		setText(data.getString("text"));
+		setFavorite_count(data.getString("favorite_count"));
+		setMedia_type(data.getString("media_type"));
 	}
 	
 	

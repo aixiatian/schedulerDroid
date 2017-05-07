@@ -1,6 +1,7 @@
 package com.chunguang.utils;
 
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.apache.http.HttpEntity;
@@ -39,5 +40,22 @@ public class CUtil {
 			}
 		}
 		return res;
+	}
+	
+	public static void writeFile(String str ,String out){
+		FileWriter fw = null;
+		try {
+			fw = new FileWriter(out);
+			fw.write(str);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			try {
+				fw.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 }
