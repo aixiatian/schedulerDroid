@@ -97,7 +97,7 @@
      			    android:id="@+id/radio_nomal" 
      			    android:text="@string/radio_nomal"
      			    android:textColor="@color/radio_txt_color" 
-     			    android:checked="true">
+     			    >
      			</RadioButton>
     			<RadioButton android:name="0" 
     			    android:layout_width="wrap_content" 
@@ -105,7 +105,15 @@
     			    android:id="@+id/radio_test" 
     			    android:text="@string/radio_test"
     			    android:textColor="@color/radio_txt_color">
-    			</RadioButton>    
+    			</RadioButton>   
+    			<RadioButton android:name="2" 
+    			    android:layout_width="wrap_content" 
+    			    android:layout_height="wrap_content" 
+    			    android:id="@+id/radio_newhpm" 
+    			    android:text="@string/radio_newhpm"
+    			    android:textColor="@color/radio_txt_color"
+    			    android:checked="true">
+    			</RadioButton> 
 			</RadioGroup>
         <Button
             android:id="@+id/login_btnLogin"

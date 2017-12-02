@@ -26,6 +26,7 @@ import android.widget.TextView;
 import com.day.entity.ErrorProject;
 import com.day.schadualer.R;
 import com.day.service.ServiceSchadualer;
+import com.day.service.ServiceSchadualerNewHpm;
 
 public class ContentActivity extends Activity /*implements SwipeRefreshLayout.OnRefreshListener*/{
 	
@@ -39,7 +40,7 @@ public class ContentActivity extends Activity /*implements SwipeRefreshLayout.On
 	
 	String username;
 	String pwd;
-	int hostidx;
+	static int hostidx;
 	
 	
 	
@@ -171,7 +172,11 @@ public class ContentActivity extends Activity /*implements SwipeRefreshLayout.On
 			String username = params[0];
 			String pwd = params[1];
 			int hostidx = Integer.parseInt(params[2]);
-			ss = new ServiceSchadualer(username, pwd, hostidx);
+			if(hostidx == 2){
+				ss = new ServiceSchadualerNewHpm(username,pwd,hostidx);
+			}else{
+				ss = new ServiceSchadualer(username, pwd, hostidx);
+			}
 			token = ss.login(username, pwd);
 			String resStr = ss.getProjectsForStatus("FAILED");
 			return resStr;
@@ -201,8 +206,8 @@ public class ContentActivity extends Activity /*implements SwipeRefreshLayout.On
 		List<ErrorProject> items = new ArrayList<ErrorProject>();
 		try {
 			JSONObject jo = new JSONObject(json);
-			String success = jo.getString("status");
-			if(!"success".equals(success))
+			String success = hostidx == 2 ? jo.getString("code"):jo.getString("status");
+			if(!"success".equals(success) && !"000".equals(success))
 				throw new RuntimeException("·µ»ØÖµ×´Ì¬->"+success);
 			JSONArray jarr = jo.getJSONArray("data");
 			if(jarr.length()>0){

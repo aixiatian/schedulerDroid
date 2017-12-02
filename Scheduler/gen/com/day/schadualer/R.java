@@ -66,26 +66,27 @@ public final class R {
         public static final int success_1=0x7f02001b;
     }
     public static final class id {
-        public static final int bnLogin=0x7f08000c;
-        public static final int iv_icon=0x7f080011;
-        public static final int listView=0x7f080010;
-        public static final int login_btnLogin=0x7f080009;
+        public static final int bnLogin=0x7f08000d;
+        public static final int iv_icon=0x7f080012;
+        public static final int listView=0x7f080011;
+        public static final int login_btnLogin=0x7f08000a;
         public static final int login_edtId=0x7f080003;
         public static final int login_edtPwd=0x7f080005;
         public static final int login_linearLayout=0x7f080001;
         public static final int login_more_user=0x7f080004;
-        public static final int passwdText=0x7f08000b;
-        public static final int proj_icon=0x7f080013;
-        public static final int proj_name=0x7f080014;
+        public static final int passwdText=0x7f08000c;
+        public static final int proj_icon=0x7f080014;
+        public static final int proj_name=0x7f080015;
         public static final int radioGroup=0x7f080006;
+        public static final int radio_newhpm=0x7f080009;
         public static final int radio_nomal=0x7f080007;
         public static final int radio_test=0x7f080008;
-        public static final int swipeMenuListView=0x7f08000f;
-        public static final int tips_vpn=0x7f08000d;
-        public static final int token_text=0x7f08000e;
-        public static final int tv_name=0x7f080012;
+        public static final int swipeMenuListView=0x7f080010;
+        public static final int tips_vpn=0x7f08000e;
+        public static final int token_text=0x7f08000f;
+        public static final int tv_name=0x7f080013;
         public static final int userId_LinearLayout=0x7f080002;
-        public static final int userNameText=0x7f08000a;
+        public static final int userNameText=0x7f08000b;
         public static final int web_logcat=0x7f080000;
     }
     public static final class layout {
@@ -99,23 +100,24 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f060000;
-        public static final int app_name1=0x7f060009;
+        public static final int app_name1=0x7f06000a;
         public static final int forgot_pwd=0x7f060004;
-        public static final int hello_world=0x7f06000a;
+        public static final int hello_world=0x7f06000b;
         public static final int loading=0x7f060005;
         public static final int login_btn=0x7f060003;
-        public static final int login_btn1=0x7f06000b;
+        public static final int login_btn1=0x7f06000c;
         public static final int pwd_edit_hint=0x7f060002;
-        public static final int pwd_edit_hint1=0x7f06000f;
-        public static final int radioGroup_desc=0x7f060008;
-        public static final int radioGroup_desc1=0x7f060011;
+        public static final int pwd_edit_hint1=0x7f060010;
+        public static final int radioGroup_desc=0x7f060009;
+        public static final int radioGroup_desc1=0x7f060012;
+        public static final int radio_newhpm=0x7f060008;
         public static final int radio_nomal=0x7f060006;
-        public static final int radio_nomal1=0x7f06000d;
+        public static final int radio_nomal1=0x7f06000e;
         public static final int radio_test=0x7f060007;
-        public static final int radio_test1=0x7f06000e;
-        public static final int tips_vpn=0x7f06000c;
+        public static final int radio_test1=0x7f06000f;
+        public static final int tips_vpn=0x7f06000d;
         public static final int username_edit_hint=0x7f060001;
-        public static final int username_edit_hint1=0x7f060010;
+        public static final int username_edit_hint1=0x7f060011;
     }
     public static final class style {
         /** 

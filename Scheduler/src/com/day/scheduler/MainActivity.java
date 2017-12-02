@@ -42,8 +42,10 @@ public class MainActivity extends Activity {
 				int id = rg.getCheckedRadioButtonId();
 				if(id == R.id.radio_test)
 					hostidx = 0;
-				else
+				else if(id == R.id.radio_nomal)
 					hostidx = 1;
+				else
+					hostidx = 2;
 				goToContentView(usernameStr, pwdStr,hostidx);
 			}
 		});

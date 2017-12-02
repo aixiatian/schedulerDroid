@@ -25,6 +25,7 @@ import android.widget.Toast;
 import com.day.entity.ErrorNode;
 import com.day.schadualer.R;
 import com.day.service.ServiceSchadualer;
+import com.day.service.ServiceSchadualerNewHpm;
 import com.day.wiget.SwipeMenu;
 import com.day.wiget.SwipeMenuCreator;
 import com.day.wiget.SwipeMenuItem;
@@ -45,7 +46,7 @@ public class NodeActivity extends Activity{
 	String projid;
 	String username;
 	String pwd;
-	int hostidx;
+	static int hostidx;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -221,7 +222,11 @@ public class NodeActivity extends Activity{
 			String username = params[0];
 			String pwd = params[1];
 			int hostidx = Integer.parseInt(params[2]);
-			ss = new ServiceSchadualer(username, pwd, hostidx);
+			if(hostidx == 2){
+				ss = new ServiceSchadualerNewHpm(username,pwd,hostidx);
+			}else{
+				ss = new ServiceSchadualer(username, pwd, hostidx);
+			}
 			ss.login(username, pwd);
 			String resStr = ss.getNodesForProject(projid, insgraid);
 			return resStr;
@@ -251,8 +256,8 @@ public class NodeActivity extends Activity{
 		List<ErrorNode> items = new ArrayList<ErrorNode>();
 		try {
 			JSONObject jo = new JSONObject(json);
-			String success = jo.getString("status");
-			if(!"success".equals(success))
+			String success = hostidx == 2 ? jo.getString("code"):jo.getString("status");
+			if(!"success".equals(success) && !"000".equals(success))
 				throw new RuntimeException("·µ»ØÖµ×´Ì¬->"+success);
 			JSONObject data = jo.getJSONObject("data");
 			JSONArray nodes = data.getJSONArray("nodes");

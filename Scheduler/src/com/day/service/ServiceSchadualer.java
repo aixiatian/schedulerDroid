@@ -25,7 +25,10 @@ public class ServiceSchadualer implements Serializable{
 	String username="";
 	String ssn="";
 	CloseableHttpClient client = null;
-	
+	public ServiceSchadualer(int hostIdx){
+		this.hostIdx = hostIdx;
+	}
+	public ServiceSchadualer(){}
 	public String getToken() {
 		return token;
 	}
@@ -49,6 +52,7 @@ public class ServiceSchadualer implements Serializable{
 	String pwd = "";
 	//0 :≤‚ ‘
 	//1 :’˝ Ω
+	//2 :newhpm
 	String[] hosts = new String[]{
 		"yz2154.hadoop.data.sina.com.cn:80","scheduler.data.sina.com.cn:8080"
 		};
